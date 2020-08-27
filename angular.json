@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "publicApp": {
+    "testl": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/publicApp",
+            "outputPath": "dist/testl",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.sass"
             ],
             "scripts": []
           },
@@ -62,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "publicApp:build"
+            "browserTarget": "testl:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "publicApp:build:production"
+              "browserTarget": "testl:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "publicApp:build"
+            "browserTarget": "testl:build"
           }
         },
         "test": {
@@ -88,7 +92,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.sass"
             ],
             "scripts": []
           }
@@ -110,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "publicApp:serve"
+            "devServerTarget": "testl:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "publicApp:serve:production"
+              "devServerTarget": "testl:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "publicApp"
+  "defaultProject": "testl"
 }
