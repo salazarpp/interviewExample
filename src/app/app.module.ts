@@ -5,15 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { environment } from 'src/environments/environment';
+import { InvitationComponent } from './invitation/invitation.component';
+import { LoginComponent } from './login/login.component';
+import { CountdownModule } from 'ngx-countdown';
+import { CountdownComponent } from './countdown/countdown.component';
+
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    InvitationComponent,
+    LoginComponent,
+    CountdownComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CountdownModule,
     MsalModule.forRoot({
       auth: {
         clientId: environment.clientId, // This is your client ID

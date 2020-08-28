@@ -41,16 +41,14 @@ export class AuthService {
   }
 
   login(): any {
-    const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
-
-    if (isIE) {
-      this.msalService.loginRedirect();
-    } else {
-      this.msalService.loginPopup();
-    }
+    this.msalService.loginRedirect();
   }
 
   logout(): any {
     this.msalService.logout();
+  }
+
+  getData(): any {
+    return this.msalService.getAccount();
   }
 }
