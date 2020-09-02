@@ -4,9 +4,10 @@
 
 export const environment = {
   production: false,
-  clientId: '',
-  authority: '',
-  redirectUri: ''
+  clientId: 'aa7e39c8-34c8-4779-8e58-a5a59f375757',
+  authority: 'https://login.microsoftonline.com/55de13a7-a079-4518-a3c5-490e1d2f86ac',
+  redirectUri: 'http://localhost:4200',
+  apiUrl: 'http://localhost:7071/api/'
 };
 
 /*

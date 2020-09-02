@@ -1,0 +1,44 @@
+<div id="data" class="row">
+    <div class="col-sm-12">
+        <div *ngIf="person$ | async">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div>
+                        Hola:
+                    </div>
+                    <div>
+                        {{(person$ |async)?.name}}
+                    </div>
+                    <div>
+                        Fuiste invitado al evento de:
+                        <div>
+                            {{(person$ |async)?.manager}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-success btn-lg btn-block">Aceptar Invitación</button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-secondary btn-lg btn-block">Rechazar Invitación</button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-warning btn-lg btn-block">Invitación Pendiente</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="clock">
+    <p>Faltan:</p>
+    <p class="time">{{ leftTime }} Días</p>
+    <p>y</p>
+    <countdown class="time" [config]="{leftTime: timeLeft$ | async}"></countdown>
+    <p class="text">Para que empiece el evento!!!! </p>
+</div>

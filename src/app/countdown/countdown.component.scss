@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+  p {
+    padding: 30px;
+  }
+
+#clock {
+  font-family: 'Share Tech Mono', monospace;
+  color: #ffffff;
+  text-align: center;
+  color: #daf6ff;
+  text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+  .time {
+      letter-spacing: 0.05em;
+      font-size: 80px;
+      padding: 30px;
+  }
+  .date {
+      letter-spacing: 0.1em;
+      font-size: 24px;
+  }
+  .text {
+      letter-spacing: 0.1em;
+      font-size: 12px;
+      padding: 30px;
+  }
+}
+
+#data {
+  font-family: 'Share Tech Mono', monospace;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 30px;;
+  color: #daf6ff;
+  text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+  .time {
+      letter-spacing: 0.05em;
+      font-size: 80px;
+      padding: 30px;
+  }
+  .date {
+      letter-spacing: 0.1em;
+      font-size: 24px;
+  }
+  .text {
+      letter-spacing: 0.1em;
+      font-size: 12px;
+      padding: 30px;
+  }
+}
+
+.line {
+  margin-top: 350px;
+}
