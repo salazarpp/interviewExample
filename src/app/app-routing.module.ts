@@ -6,9 +6,9 @@ import { InvitationComponent } from './invitation/invitation.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
   { path: 'home', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: '', component: InvitationComponent },
+  { path: 'invitation', component: InvitationComponent },
   { path: '**', component: InvitationComponent }
 ];
 
