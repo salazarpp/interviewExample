@@ -13,17 +13,20 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     public router: Router
   ) {
+  }
+
+  ngOnInit(): void {
     if (this.authService.getData()) {
       this.router.navigate(['home']);
     }
+  }
+
+  login(): void {
     this.authService.startLogin();
     if (!this.authService.loggedIn) {
       this.authService.login();
       console.log(this.authService.getData());
     }
-  }
-
-  ngOnInit(): void {
   }
 
 }
