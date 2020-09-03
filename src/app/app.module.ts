@@ -16,6 +16,9 @@ import {MatInputModule} from '@angular/material/input';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TimeHelpReducer } from './store/reducers/time-help.reducer';
+import { NavbarhComponent } from './navbarh/navbarh.component';
+import { AddParticipantComponent } from './add-participant/add-participant.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 @NgModule({
@@ -25,6 +28,8 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     InvitationComponent,
     LoginComponent,
     CountdownComponent,
+    NavbarhComponent,
+    AddParticipantComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +38,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     HttpClientModule,
     MatTableModule,
     MatInputModule,
+    ReactiveFormsModule,
     StoreModule.forRoot({ TimeHelp: TimeHelpReducer }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     MsalModule.forRoot({

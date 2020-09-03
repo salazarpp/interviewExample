@@ -29,10 +29,8 @@ var AuthService = /** @class */ (function () {
                 console.error('Redirect Error: ', authError.errorMessage);
                 return;
             }
-            console.log('Redirect Success: ', response.accessToken);
         });
         this.msalService.setLogger(new msal_1.Logger(function (logLevel, message, piiEnabled) {
-            console.log('MSAL Logging: ', message);
         }, {
             correlationId: msal_1.CryptoUtils.createNewGuid(),
             piiLoggingEnabled: false

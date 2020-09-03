@@ -33,6 +33,14 @@ export class PartyService {
     );
   }
 
+  addParticipants(participants: Participants[]): Observable<Participants[]> {
+    return this.http.post<any>((this.participantsUrl), participants)
+    .pipe(
+      retry(1),
+      catchError(this.errorHandl)
+    );
+  }
+
   errorHandl(error: any): any {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

@@ -1,0 +1,17 @@
+<div class="row form-data">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+            <label for="validationServer01">First name</label>
+            <input type="text" class="form-control" id="validationServer01" required [formControl]="name">
+            </div>
+            <div class="col-md-6 mb-3">
+            <label for="validationServer02">Last name</label>
+            <input type="text" class="form-control" id="validationServer02" required [formControl]="lastName">
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" (click)="addParticipant()">Submit form</button>
+    </div>
+    <div class="col-sm-1"></div>
+</div>

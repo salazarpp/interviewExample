@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
     this.authService.startLogin();
     if (!this.authService.loggedIn) {
       this.authService.login();
-      console.log(this.authService.getData());
     }
   }
 

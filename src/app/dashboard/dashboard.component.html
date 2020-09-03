@@ -1,8 +1,9 @@
 <div>
     <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4">Hola {{userData.name}}</h1>
+        <p class="lead">This is a list of the participants at the event.</p>
         <div class="container">
-          <h1 class="display-4">Hola {{userData.name}}</h1>
-          <p class="lead">This is a list of the participants at the event.</p>
+            <button type="button" class="btn btn-primary" (click)="addParticipant()">Agregar participante</button>
         </div>
       </div>
     <div class="row">
@@ -47,6 +48,23 @@
                         <button type="button" class="btn btn-link" (click)="openInvitation(element.Id)">
                             <span class="material-icons">
                                 email 
+                            </span>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <!-- Invitación Column -->
+                <ng-container matColumnDef="delete">
+                    <th mat-header-cell *matHeaderCellDef>Delete</th>
+                    <td mat-cell *matCellDef="let element">
+                        <button type="button" class="btn btn-primary" (click)="editParticipant(element.Id)">
+                            <span class="material-icons">
+                                edit 
+                            </span>
+                        </button>
+                        <button type="button" class="btn btn-danger" (click)="deleteParticipant(element.Id)">
+                            <span class="material-icons">
+                                delete 
                             </span>
                         </button>
                     </td>

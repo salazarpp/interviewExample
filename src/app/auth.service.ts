@@ -25,11 +25,9 @@ export class AuthService {
         return;
       }
 
-      console.log('Redirect Success: ', response.accessToken);
     });
 
     this.msalService.setLogger(new Logger((logLevel, message, piiEnabled) => {
-      console.log('MSAL Logging: ', message);
     }, {
       correlationId: CryptoUtils.createNewGuid(),
       piiLoggingEnabled: false

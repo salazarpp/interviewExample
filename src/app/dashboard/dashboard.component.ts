@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   ELEMENT_DATA: Participants[] = [];
   userData: any;
-  displayedColumns: string[] = ['Name', 'Confirmation', 'icons', 'invitation'];
+  displayedColumns: string[] = ['Name', 'Confirmation', 'icons', 'invitation', 'delete'];
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
   constructor(
@@ -24,7 +24,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.userData = this.authService.getData();
     if (this.authService.getData()) {
-      console.log(this.authService.getData());
       this.partyService.getParticipants().subscribe((d: Participants[]) => {
         this.dataSource = new MatTableDataSource(d);
       });
@@ -81,6 +80,18 @@ export class DashboardComponent implements OnInit {
 
   openInvitation(idValue: string): void {
     this.router.navigate(['invitation', { id: idValue }]);
+  }
+
+  addParticipant(): void {
+    this.router.navigate(['add-participant']);
+  }
+
+  editParticipant(idValue: string): void {
+    this.router.navigate(['add-participant', { id: idValue }]);
+  }
+
+  deleteParticipant(idValue: string): void {
+    // this.router.navigate(['add-participant'], { id: idValue });
   }
 
 }
